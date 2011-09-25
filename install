@@ -1,0 +1,15 @@
+#!/bin/sh
+
+script_path=$0
+script_fullpath="${PWD}/${script_path}"
+install_dir=$HOME
+src_dir=`(cd ${install_dir} && dirname ${script_fullpath})`
+
+echo "script_path: $script_path"
+echo "script_fullpath: $script_fullpath"
+echo "src_dir: $src_dir"
+exit 0;
+
+if [ ! -e ${install_dir}/.vimrc ]; then
+    ln -s ${src_dir}/vimrc ${install_dir}/.vimrc;
+fi
