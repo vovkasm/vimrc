@@ -30,7 +30,8 @@ colo molokai
 syntax on
 
 if has("gui_running")
-    set guifont=Monospace\ 8
+"    set guifont=Monospace\ 8
+    set guifont=DejaVu\ Sans\ Mono\ 8
 endif
 
 " perl-syntax
