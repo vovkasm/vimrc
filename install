@@ -13,3 +13,4 @@ exit 0;
 if [ ! -e ${install_dir}/.vimrc ]; then
     ln -s ${src_dir}/vimrc ${install_dir}/.vimrc;
 fi
+
