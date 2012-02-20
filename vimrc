@@ -34,6 +34,8 @@ if has("gui_running")
     set guifont=DejaVu\ Sans\ Mono\ 8
 endif
 
+set tags=tags;
+
 " perl-syntax
 let perl_fold = 1
 
