@@ -32,6 +32,7 @@ syntax on
 if has("gui_running")
 "    set guifont=Monospace\ 8
     set guifont=DejaVu\ Sans\ Mono\ 8
+    set guioptions-=T
 endif
 
 " perl-syntax
