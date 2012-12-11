@@ -42,3 +42,16 @@ let perl_fold = 1
 
 " web-indent
 " let g:js_indent_log = 0
+
+" tidy
+command -range=% -nargs=* Tidy <line1>,<line2>!perltidy
+
+fun DoTidy()
+    let Pos = line2byte( line( "." ) )
+    :Tidy
+    exe "goto " . Pos
+endfun
+
+au Filetype perl nmap <F2> :call DoTidy()<CR>
+au Filetype perl vmap <F2> :Tidy<CR>
+
