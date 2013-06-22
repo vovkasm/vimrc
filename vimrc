@@ -55,3 +55,20 @@ endfun
 au Filetype perl nmap <F2> :call DoTidy()<CR>
 au Filetype perl vmap <F2> :Tidy<CR>
 
+function LangPerl()
+
+" включаем все самое умное что есть в perl :)
+setlocal expandtab autoindent smartindent
+" Генерим сtags файл по нажатию F6
+imap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 /home/a.kostenko/ctags/bin/ctags --fields=+iaS --extra=+q .a
+nmap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 /home/a.kostenko/ctags/bin/ctags --fields=+iaS --extra=+q .
+" устанавливаем ограничение на длину строки в 100 символов
+setlocal textwidth=100
+
+endfunction 
+
+augroup FileSettings
+autocmd!
+" setting up for Perl
+autocmd FileType perl call LangPerl()
+augroup END
