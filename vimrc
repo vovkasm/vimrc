@@ -60,8 +60,8 @@ function LangPerl()
 " включаем все самое умное что есть в perl :)
 setlocal expandtab autoindent smartindent
 " Генерим сtags файл по нажатию F6
-imap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 /home/a.kostenko/ctags/bin/ctags --fields=+iaS --extra=+q .a
-nmap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 /home/a.kostenko/ctags/bin/ctags --fields=+iaS --extra=+q .
+imap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 ctags --fields=+iaS --extra=+q .a
+nmap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 ctags --fields=+iaS --extra=+q .
 " устанавливаем ограничение на длину строки в 100 символов
 setlocal textwidth=100
 
