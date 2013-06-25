@@ -52,23 +52,30 @@ fun DoTidy()
     exe "goto " . Pos
 endfun
 
-au Filetype perl nmap <F2> :call DoTidy()<CR>
-au Filetype perl vmap <F2> :Tidy<CR>
+" ctags
+let ctags_exe = executable("exctags") == 1 ? "exctags" : "ctags"
 
-function LangPerl()
+command Ctags execute '!find . -type f -name "*.p[ml]" -print0 | xargs -0 ' . ctags_exe . ' --fields=+iaS --extra=+q .'
 
-" включаем все самое умное что есть в perl :)
-setlocal expandtab autoindent smartindent
-" Генерим сtags файл по нажатию F6
-imap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 ctags --fields=+iaS --extra=+q .a
-nmap <F6> :!find . -type f -name "*.p[ml]" -print0 \| xargs -0 ctags --fields=+iaS --extra=+q .
-" устанавливаем ограничение на длину строки в 100 символов
-setlocal textwidth=100
+function SetupPerl()
+  " включаем все самое умное что есть в perl :)
+  setlocal expandtab autoindent smartindent
+
+  " F2 - отформатировать код с помощью perltidy
+  nmap <F2> :call DoTidy()<CR>
+  vmap <F2> :Tidy<CR>
+
+  " Генерим сtags файл по нажатию F6
+  imap <F6> :Ctags<CR>
+  nmap <F6> :Ctags<CR>
+
+  " устанавливаем ограничение на длину строки в 100 символов
+  setlocal textwidth=100
 
 endfunction 
 
 augroup FileSettings
 autocmd!
 " setting up for Perl
-autocmd FileType perl call LangPerl()
+autocmd FileType perl call SetupPerl()
 augroup END
