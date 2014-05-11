@@ -80,3 +80,7 @@ autocmd!
 " setting up for Perl
 autocmd FileType perl call SetupPerl()
 augroup END
+
+" Attach *.i and *.swg files to swig filetype
+au BufNewFile,BufRead *.i set filetype=swig
+au BufNewFile,BufRead *.swg set filetype=swig
