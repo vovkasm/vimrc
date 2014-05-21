@@ -10,7 +10,8 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set listchars=tab:→\ ,trail:·
+"set listchars=tab:→\ ,trail:·
+set listchars=tab:├┈,trail:·
 
 set scrolloff=3
 set autoindent
@@ -31,8 +32,14 @@ colo molokai
 syntax on
 
 if has("gui_running")
-"    set guifont=Monospace\ 8
-    set guifont=DejaVu\ Sans\ Mono\ 8
+    if has("gui_gtk2")
+        "    set guifont=Monospace\ 8
+        set guifont=DejaVu\ Sans\ Mono\ 8
+    elseif has("gui_win32")
+        set guifont=Luxi_Mono:h12:cANSI
+    elseif has("uig_macvim")
+        set guifont=Menlo\ Regular:h10
+    endif
     set guioptions-=T
 endif
 
@@ -45,35 +52,31 @@ let perl_fold = 1
 " let g:js_indent_log = 0
 
 " tidy
-command -range=% -nargs=* Tidy <line1>,<line2>!perltidy
+com! -range=% -nargs=* Tidy <line1>,<line2>!perltidy
 
-fun DoTidy()
+fu! DoTidy()
     let Pos = line2byte( line( "." ) )
     :Tidy
     exe "goto " . Pos
-endfun
+endfunc
 
 " ctags
 let ctags_exe = executable("exctags") == 1 ? "exctags" : "ctags"
 
-command Ctags execute '!find . -type f -name "*.p[ml]" -print0 | xargs -0 ' . ctags_exe . ' --fields=+iaS --extra=+q .'
+com! Ctags execute '!find . -type f -name "*.p[ml]" -print0 | xargs -0 ' . ctags_exe . ' --fields=+iaS --extra=+q .'
 
-function SetupPerl()
+fu! SetupPerl()
   " включаем все самое умное что есть в perl :)
   setlocal expandtab autoindent smartindent
-
   " F2 - отформатировать код с помощью perltidy
   nmap <F2> :call DoTidy()<CR>
   vmap <F2> :Tidy<CR>
-
   " Генерим сtags файл по нажатию F6
   imap <F6> :Ctags<CR>
   nmap <F6> :Ctags<CR>
-
   " устанавливаем ограничение на длину строки в 100 символов
   setlocal textwidth=100
-
-endfunction 
+endfunc
 
 augroup FileSettings
 autocmd!
