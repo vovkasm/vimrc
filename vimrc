@@ -37,8 +37,8 @@ if has("gui_running")
         set guifont=DejaVu\ Sans\ Mono\ 8
     elseif has("gui_win32")
         set guifont=Luxi_Mono:h12:cANSI
-    elseif has("uig_macvim")
-        set guifont=Menlo\ Regular:h10
+    elseif has("gui_macvim")
+        set guifont=Menlo\ Regular:h9
     endif
     set guioptions-=T
 endif
