@@ -87,3 +87,6 @@ augroup END
 " Attach *.i and *.swg files to swig filetype
 au BufNewFile,BufRead *.i set filetype=swig
 au BufNewFile,BufRead *.swg set filetype=swig
+
+" Attach *.bsh files (BeanShell) to java filetype (because it is java ;-)
+au BufNewFile,BufRead *.bsh set filetype=java
