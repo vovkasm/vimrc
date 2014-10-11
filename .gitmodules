@@ -16,3 +16,6 @@ url=https://github.com/vovkasm/vim-pathogen.git
 [submodule "vim/bundle/editorconfig-vim"]
 	path = vim/bundle/editorconfig-vim
 url=https://github.com/vovkasm/editorconfig-vim.git
+[submodule "vim/bundle/vim-xkbswitch"]
+	path = vim/bundle/vim-xkbswitch
+	url = https://github.com/vovkasm/vim-xkbswitch.git
