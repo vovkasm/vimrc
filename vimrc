@@ -44,6 +44,11 @@ if has("gui_running")
     set guioptions-=T
 endif
 
+let g:XkbSwitchEnabled = 1
+if has('macunix')
+    let g:XkbSwitchLib = '/usr/local/lib/libInputSourceSwitcher.dylib'
+endif
+
 set tags=tags;
 
 " perl-syntax
