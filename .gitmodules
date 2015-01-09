@@ -19,3 +19,6 @@ url=https://github.com/vovkasm/editorconfig-vim.git
 [submodule "vim/bundle/xkbswitch"]
 	path = vim/bundle/xkbswitch
 	url = https://github.com/lyokha/vim-xkbswitch.git
+[submodule "vim/bundle/puppet"]
+	path = vim/bundle/puppet
+	url = git://github.com/rodjek/vim-puppet.git
