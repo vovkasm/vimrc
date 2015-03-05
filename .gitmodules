@@ -7,9 +7,6 @@ url=https://github.com/vovkasm/vim-perl.git
 [submodule "vim/bundle/nerdtree"]
 	path = vim/bundle/nerdtree
 	url = https://github.com/vovkasm/nerdtree.git
-[submodule "vim/bundle/perlomni"]
-	path = vim/bundle/perlomni
-	url = https://github.com/c9s/perlomni.vim.git
 [submodule "vim/bundle/vim-pathogen"]
 	path = vim/bundle/vim-pathogen
 url=https://github.com/vovkasm/vim-pathogen.git
