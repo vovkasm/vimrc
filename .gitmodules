@@ -22,3 +22,6 @@ url=https://github.com/vovkasm/editorconfig-vim.git
 [submodule "vim/bundle/typescript-vim"]
 	path = vim/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "vim/bundle/salt-vim"]
+	path = vim/bundle/salt-vim
+	url = https://github.com/saltstack/salt-vim.git
