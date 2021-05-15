@@ -1,8 +1,5 @@
-filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-filetype plugin indent on
 set nocompatible
+filetype plugin indent on
 
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set undodir=~/.vimswap//,/var/tmp//,/tmp//,.
@@ -29,7 +26,7 @@ set laststatus=2
 set relativenumber
 set undofile
 
-colo molokai
+colorscheme darcula 
 syntax on
 
 if has("gui_running")

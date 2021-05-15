@@ -1,0 +1,4 @@
+flavor 'editorconfig/editorconfig-vim', '~> 1.1.1'
+flavor 'preservim/nerdtree', '~> 6.10.9'
+flavor 'leafgarland/typescript-vim', branch: 'master'
+flavor 'doums/darcula', branch: 'master'

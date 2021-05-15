@@ -1,6 +1,8 @@
 = Some notes. =
-== MacVim ==
+== Manage plugins ==
+```
+gem install vim-flavor
+vim-flavor install
+vim-flavor update
+```
 
-If you got error like "ImportError: No module named site", you need rebuild you MacVim with actual python.
-For Homebrew installs, most probably you install macvim from bottle, but upgrade python... So you need
-`brew install --build-from-source macvim`
