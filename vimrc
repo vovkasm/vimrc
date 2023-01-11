@@ -36,9 +36,17 @@ if has("gui_running")
     elseif has("gui_win32")
         set guifont=Luxi_Mono:h12:cANSI
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h9
+        set guifont=Menlo\ Regular:h12
     endif
     set guioptions-=T
+    augroup TuneColors | au!
+        highlight Cursor guifg=steelblue guibg=yellow
+        highlight iCursor guifg=white guibg=steelblue
+        set guicursor=n-v-c:block-Cursor
+        set guicursor+=i:ver100-iCursor
+        set guicursor+=n-v-c:blinkon0
+        set guicursor+=i:blinkwait10
+    augroup END
 endif
 
 let g:XkbSwitchEnabled = 1
