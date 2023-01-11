@@ -1,8 +1,10 @@
 = Some notes. =
 == Manage plugins ==
 ```
-gem install vim-flavor
-vim-flavor install
-vim-flavor update
+:PlugInstall - install plugs
+:PlugUpdate - update or install plugs
+:PlugClean - remove unlisted plugs
+:PlugUpgrade - upgrade Plug itself
+:PlugDiff
 ```
 

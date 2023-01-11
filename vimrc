@@ -1,5 +1,12 @@
 set nocompatible
-filetype plugin indent on
+
+call plug#begin()
+Plug 'editorconfig/editorconfig-vim'
+Plug 'preservim/nerdtree'
+Plug 'leafgarland/typescript-vim'
+Plug 'doums/darcula'
+Plug 'ledger/vim-ledger'
+call plug#end()
 
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
 set undodir=~/.vimswap//,/var/tmp//,/tmp//,.
