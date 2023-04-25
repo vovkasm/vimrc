@@ -2,7 +2,7 @@ set nocompatible
 
 call plug#begin()
 Plug 'editorconfig/editorconfig-vim'
-Plug 'preservim/nerdtree'
+Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'leafgarland/typescript-vim'
 Plug 'doums/darcula'
 Plug 'ledger/vim-ledger'
@@ -101,6 +101,14 @@ autocmd!
 " setting up for Perl
 autocmd FileType perl call SetupPerl()
 augroup END
+
+" ledger
+let g:ledger_bin = '/opt/homebrew/bin/ledger'
+let g:ledger_date_format = '%Y-%m-%d'
+let g:ledger_commodity_before = 0
+let g:ledger_commodity_sep = ' '
+au FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+au FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
 
 " Attach *.i and *.swg files to swig filetype
 au BufNewFile,BufRead *.i set filetype=swig
