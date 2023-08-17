@@ -116,3 +116,4 @@ au BufNewFile,BufRead *.swg set filetype=swig
 
 " Attach *.bsh files (BeanShell) to java filetype (because it is java ;-)
 au BufNewFile,BufRead *.bsh set filetype=java
+
