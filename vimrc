@@ -43,7 +43,8 @@ if has("gui_running")
     elseif has("gui_win32")
         set guifont=Luxi_Mono:h12:cANSI
     elseif has("gui_macvim")
-        set guifont=Menlo\ Regular:h12
+"        set guifont=Menlo\ Regular:h12
+        set guifont=-monospace-:h12
     endif
     set guioptions-=T
     augroup TuneColors | au!
