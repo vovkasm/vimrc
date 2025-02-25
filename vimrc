@@ -1,11 +1,15 @@
 set nocompatible
 
+let g:ale_completion_enabled = 1
+let g:ale_linters_ignore = ["deno", "standard", "biome", "prettier", "tslint", "xo"]
+
 call plug#begin()
 Plug 'editorconfig/editorconfig-vim'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'leafgarland/typescript-vim'
 Plug 'doums/darcula'
 Plug 'ledger/vim-ledger'
+Plug 'dense-analysis/ale'
 call plug#end()
 
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
