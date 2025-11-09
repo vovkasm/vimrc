@@ -1,7 +1,7 @@
 set nocompatible
 
 let g:ale_completion_enabled = 1
-let g:ale_linters_ignore = ["deno", "standard", "biome", "prettier", "tslint", "xo"]
+let g:ale_linters_ignore = ["deno", "standard", "prettier", "tslint", "xo"]
 
 call plug#begin()
 Plug 'editorconfig/editorconfig-vim'
@@ -10,6 +10,7 @@ Plug 'leafgarland/typescript-vim'
 Plug 'doums/darcula'
 Plug 'ledger/vim-ledger'
 Plug 'dense-analysis/ale'
+" Plug 'gergap/vim-ollama'
 call plug#end()
 
 set dir=~/.vimswap//,/var/tmp//,/tmp//,.
